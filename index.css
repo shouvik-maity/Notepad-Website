@@ -145,6 +145,39 @@ main {
   padding: 10px;
   color: var(--primary-color);
   background-color: black;
+  min-width: 300px;
+}
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+.delete-btn, .complete-btn {
+  padding: 5px 12px;
+  font-size: 12px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: 300ms;
+  font-weight: bold;
+}
+.delete-btn:hover {
+  background-color: #ff4444;
+  color: white;
+  border-color: #ff4444;
+}
+.complete-btn:hover {
+  background-color: var(--primary-color);
+  color: black;
+}
+.empty-state {
+  color: var(--primary-color);
+  font-size: 18px;
+  text-align: center;
+  padding: 40px;
 }
 /* down */
 footer {
@@ -162,4 +195,244 @@ footer {
   height: var(--h-size);
   gap: 8px;
   max-width: var(--w-size);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  :root {
+    --w-size: 90%;
+    --h-size: 60px;
+    --txt-size: 14px;
+  }
+  
+  .cont {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .topic, .detail {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .add {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .nav, .foot {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --w-size: 95%;
+    --h-size: 50px;
+    --txt-size: 13px;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  .left, .right {
+    font-size: 14px;
+  }
+  
+  .topic, .detail {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .topic {
+    height: 35px;
+  }
+  
+  .detail {
+    height: 150px;
+  }
+  
+  .add {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .preview {
+    font-size: 1.5rem;
+  }
+  
+  .later {
+    font-size: 13px;
+  }
+  
+  .subcont {
+    min-width: 100%;
+    padding: 12px;
+  }
+  
+  .task-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .delete-btn, .complete-btn {
+    width: 100%;
+    font-size: 11px;
+    padding: 8px;
+  }
+  
+  .foot {
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+  }
+  
+  .foot div {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --w-size: 98%;
+    --h-size: 45px;
+    --txt-size: 12px;
+  }
+  
+  .container {
+    min-height: 100vh;
+  }
+  
+  .nav {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .left span {
+    display: none;
+  }
+  
+  .left {
+    font-size: 24px;
+  }
+  
+  .right {
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px 0;
+  }
+  
+  .cont {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .addpart {
+    gap: 12px;
+  }
+  
+  .topic, .detail {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  .topic {
+    height: 32px;
+  }
+  
+  .detail {
+    height: 120px;
+  }
+  
+  .topic::placeholder, .detail::placeholder {
+    font-size: 12px;
+  }
+  
+  .add {
+    width: 100%;
+    height: 38px;
+    font-size: 14px;
+  }
+  
+  .add:hover {
+    box-shadow: 0px 0px 15px 0px rgba(255, 234, 0, 0.5);
+  }
+  
+  .showpart {
+    gap: 15px;
+  }
+  
+  .preview {
+    font-size: 1.2rem;
+    padding-bottom: 5px;
+  }
+  
+  .later {
+    width: 100%;
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .subcont {
+    width: 100%;
+    min-width: unset;
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  .topicout {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .descripout {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .task-actions {
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 8px;
+  }
+  
+  .delete-btn, .complete-btn {
+    width: 100%;
+    font-size: 11px;
+    padding: 6px;
+  }
+  
+  .empty-state {
+    font-size: 14px;
+    padding: 30px 15px;
+  }
+  
+  footer {
+    height: auto;
+    min-height: var(--h-size);
+    padding: 10px 0;
+  }
+  
+  .foot {
+    flex-direction: column;
+    gap: 3px;
+    min-height: auto;
+  }
+  
+  .foot div {
+    font-size: 11px;
+    padding: 3px 0;
+  }
 }
