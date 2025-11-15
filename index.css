@@ -169,10 +169,6 @@ main {
   color: white;
   border-color: #ff4444;
 }
-.complete-btn:hover {
-  background-color: var(--primary-color);
-  color: black;
-}
 .empty-state {
   color: var(--primary-color);
   font-size: 18px;

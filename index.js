@@ -54,7 +54,7 @@ function displayTasks() {
             <div class="descripout">${task.description}</div>
             <div class="task-actions">
                 <button class="delete-btn" onclick="deleteTask(${task.id})">Delete</button>
-                <button class="complete-btn" onclick="toggleComplete(${task.id})">${task.completed ? 'Undo' : 'Complete'}</button>
+                
             </div>
         </div>
     `).join('');
@@ -69,15 +69,6 @@ function deleteTask(id) {
     }
 }
 
-// Toggle task completion
-function toggleComplete(id) {
-    const task = tasks.find(t => t.id === id);
-    if (task) {
-        task.completed = !task.completed;
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        displayTasks();
-    }
-}
 
 // Event listeners
 addbtn.addEventListener('click', addtask);
